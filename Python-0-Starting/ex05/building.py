@@ -3,9 +3,9 @@ import sys
 
 def char_count(string: str) -> dict:
     """
-    Function takes a single string argument and displays the sums of its upper-
-    case characters, lower-case characters, punctuation characters, digits and
-     spaces.
+    Function that takes a single string argument and displays the sums of its
+     upper-case characters, lower-case characters, punctuation characters,
+     digits and spaces.
     """
     charTypes = {
         "char": 0,
@@ -35,11 +35,20 @@ def main():
     try:
         assert len(sys.argv) <= 2, "more than one argument is provided"
 
-        charTypes = char_count(sys.argv[1])
+        if len(sys.argv) == 1:
+            print("What is the text to count?")
+            try:
+                string = sys.stdin.readline()
+            except KeyboardInterrupt:
+                sys.exit(0)
+        else:
+            string = sys.argv[1]
+
+        charTypes = char_count(string)
         print(f"The text contains {charTypes['char']} characters:")
         print(f"{charTypes['upper']} upper letters")
         print(f"{charTypes['lower']} lower letters")
-        print(f"{charTypes['punctuation']} puncuation marks")
+        print(f"{charTypes['punctuation']} punctuation marks")
         print(f"{charTypes['space']} spaces")
         print(f"{charTypes['digit']} digits")
 
