@@ -1,11 +1,20 @@
+"""
+Program, which takes a single string argument and displays the sums of :
+- upper-case characters,
+- lower-case characters,
+- punctuation characters,
+- digits,
+- and spaces."""
 import sys
 
 
 def char_count(string: str) -> dict:
     """
-    Function that takes a single string argument and displays the sums of its
-     upper-case characters, lower-case characters, punctuation characters,
-     digits and spaces.
+    Count different types of characters in a string.
+    Args:
+        string (str): The input string to analyze.
+    Returns:
+        dict: A dictionary with counts of different character types.
     """
     charTypes = {
         "char": 0,
@@ -32,6 +41,10 @@ def char_count(string: str) -> dict:
 
 
 def main():
+    """
+    Main function to execute the character counting program.
+    It handles command-line arguments and user input.
+    """
     try:
         assert len(sys.argv) <= 2, "more than one argument is provided"
 
