@@ -12,21 +12,28 @@ import sys
 from ft_filter import ft_filter
 
 
-def filterstring(S: str, N: int):
-    if (len(S) > N):
-        return S
+def filterstring(string: str, n: int) -> list:
+    new_list = ft_filter(lambda word: len(word) > n, string)
+    return new_list
 
 
 def main():
     try:
         assert len(sys.argv) == 3, "the arguments are bad"
-        value = int(sys.argv[2])
-        filtered = ft_filter(filterstring(sys.argv[1], value), sys.argv[1])
 
-        print(list(filtered))
+        S = sys.argv[1]
+        words = S.split()
+
+        try:
+            N = int(sys.argv[2])
+        except ValueError:
+            raise AssertionError("the arguments are bad")
+
+        result = [word for word in filterstring(words, N)]
+        print(result)
 
     except AssertionError as err:
-        print(f"Assertion error: {err}")
+        print(f"AssertionError: {err}")
 
 
 if __name__ == "__main__":
