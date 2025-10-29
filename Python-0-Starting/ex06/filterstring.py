@@ -8,13 +8,9 @@ lambda.
 • If the number of argument is different from 2, or if the type of any argument
 is wrong, the program prints an AssertionError."""
 
+
 import sys
 from ft_filter import ft_filter
-
-
-def filterstring(string: str, n: int) -> list:
-    new_list = ft_filter(lambda word: len(word) > n, string)
-    return new_list
 
 
 def main():
@@ -29,7 +25,9 @@ def main():
         except ValueError:
             raise AssertionError("the arguments are bad")
 
-        result = [word for word in filterstring(words, N)]
+        filteredstring = ft_filter(lambda word: len(word) > N, words)
+
+        result = [word for word in filteredstring]
         print(result)
 
     except AssertionError as err:
