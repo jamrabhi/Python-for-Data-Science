@@ -26,9 +26,16 @@ def main():
     }
 
     try:
-        assert len(sys.argv) == 2, "the arguments are bad"
+        err_msg = "the arguments are bad"
 
-        assert all(c.isalnum() or c == ' ' for c in sys.argv[1]), "the arguments are bad"
+        assert len(sys.argv) == 2, err_msg
+
+        text = sys.argv[1].upper()
+
+        assert all(c.isalnum() or c == ' ' for c in text), err_msg
+
+        morse_code = ' '.join(NESTED_MORSE[c] for c in text)
+        print(morse_code)
 
     except AssertionError as err:
         print(f"AssertionError: {err}")
