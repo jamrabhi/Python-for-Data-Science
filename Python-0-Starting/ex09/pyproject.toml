@@ -13,6 +13,7 @@ description = "A sample test package"
 requires-python = ">=3.10"
 keywords = ["ft_package", "42"]
 license = "MIT"
+readme = "README.md"
 
 [project.urls]
 Homepage = "https://github.com/jamrabhi/"
