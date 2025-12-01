@@ -22,5 +22,20 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
         print(f"AssertionError: {err}")
         return []
 
-# def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
-#     #your code here
+
+def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+    '''Return a list indicating if each BMI exceeds the given limit.'''
+    try:
+        if not (isinstance(limit, int) and limit > 0):
+            raise AssertionError("Limit must be > 0")
+        if not isinstance(bmi, list):
+            raise AssertionError("bmi must be a list")
+        if not all(isinstance(b, (int, float)) and b > 0 for b in bmi):
+            raise AssertionError("bmi must contain only int/float and > 0")
+
+        result = np.array(bmi) > limit
+        return result.tolist()
+
+    except AssertionError as err:
+        print(f"AssertionError: {err}")
+        return []
