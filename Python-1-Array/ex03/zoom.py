@@ -13,7 +13,7 @@ def zoom(img_array: np.ndarray) -> np.ndarray:
         raise AssertionError("Image is too small.")
 
     sliced = img_array[100:500, 450:850, :]
-    gray_img = np.mean(sliced, axis=2).astype(np.int16)
+    gray_img = np.mean(sliced, axis=2).astype(np.uint8)
     zoomed = gray_img.reshape((400, 400, 1))
 
     plt.imshow(zoomed, cmap='gray')
