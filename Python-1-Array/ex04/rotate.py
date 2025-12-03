@@ -9,7 +9,7 @@ from load_image import ft_load
 
 def transpose(img_array: np.ndarray) -> np.ndarray:
     '''Transposes the image.'''
-    reshaped_img = img_array.reshape((400,400))
+    reshaped_img = img_array.reshape((400, 400))
     transposed_img = reshaped_img.transpose()
     print(f"New shape after Transpose: {transposed_img.shape}")
     return transposed_img
