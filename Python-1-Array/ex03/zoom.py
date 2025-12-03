@@ -16,7 +16,6 @@ def zoom(img_array: np.ndarray) -> np.ndarray:
     gray_img = np.mean(sliced, axis=2).astype(np.uint8)
     zoomed = gray_img.reshape((400, 400, 1))
 
-    plt.imshow(zoomed, cmap='gray')
     print(f"New shape after slicing: {zoomed.shape} or {gray_img.shape}")
     return zoomed
 
@@ -29,7 +28,9 @@ def main():
             return
 
         print(img_array)
-        print(zoom(img_array))
+        zoomed_img = zoom(img_array)
+        print(zoomed_img)
+        plt.imshow(zoomed_img, cmap='gray')
         plt.show()
 
     except AssertionError as err:
