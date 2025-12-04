@@ -5,7 +5,7 @@ from pimp_image import ft_green
 from pimp_image import ft_blue
 from pimp_image import ft_grey
 
-array = ft_load("landscape.japg")
+array = ft_load("landscape.jpg")
 
 ft_invert(array)
 ft_red(array)
