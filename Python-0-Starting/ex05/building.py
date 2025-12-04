@@ -16,7 +16,7 @@ def char_count(string: str) -> dict:
     Returns:
         dict: A dictionary with counts of different character types.
     """
-    charTypes = {
+    char_types = {
         "char": 0,
         "upper": 0,
         "lower": 0,
@@ -27,17 +27,17 @@ def char_count(string: str) -> dict:
     punctuations = '''!"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~'''
     for char in string:
         if char.isupper():
-            charTypes["upper"] += 1
+            char_types["upper"] += 1
         elif char.islower():
-            charTypes["lower"] += 1
+            char_types["lower"] += 1
         elif char.isdigit():
-            charTypes["digit"] += 1
+            char_types["digit"] += 1
         elif char.isspace():
-            charTypes["space"] += 1
+            char_types["space"] += 1
         elif char in punctuations:
-            charTypes["punctuation"] += 1
-        charTypes["char"] += 1
-    return charTypes
+            char_types["punctuation"] += 1
+        char_types["char"] += 1
+    return char_types
 
 
 def main():
@@ -57,13 +57,13 @@ def main():
         else:
             string = sys.argv[1]
 
-        charTypes = char_count(string)
-        print(f"The text contains {charTypes['char']} characters:")
-        print(f"{charTypes['upper']} upper letters")
-        print(f"{charTypes['lower']} lower letters")
-        print(f"{charTypes['punctuation']} punctuation marks")
-        print(f"{charTypes['space']} spaces")
-        print(f"{charTypes['digit']} digits")
+        char_types = char_count(string)
+        print(f"The text contains {char_types['char']} characters:")
+        print(f"{char_types['upper']} upper letters")
+        print(f"{char_types['lower']} lower letters")
+        print(f"{char_types['punctuation']} punctuation marks")
+        print(f"{char_types['space']} spaces")
+        print(f"{char_types['digit']} digits")
 
     except AssertionError as err:
         print(f"AssertionError: {err}")
