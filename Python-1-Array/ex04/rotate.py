@@ -7,12 +7,18 @@ import matplotlib.pyplot as plt
 from load_image import ft_load
 
 
-def transpose(img_array: np.ndarray) -> np.ndarray:
+def transpose(matrix: np.ndarray) -> np.ndarray:
     '''Transposes the image.'''
-    reshaped_img = img_array.reshape((400, 400))
-    transposed_img = reshaped_img.transpose()
-    print(f"New shape after Transpose: {transposed_img.shape}")
-    return transposed_img
+    rows, cols = matrix.shape
+
+    transposed_arr = np.zeros((cols, rows), dtype=matrix.dtype)
+
+    for i in range(rows):
+        for j in range(cols):
+            transposed_arr[j][i] = matrix[i][j]
+
+    print(f"New shape after Transpose: {transposed_arr.shape}")
+    return transposed_arr
 
 
 def zoom(img_array: np.ndarray) -> np.ndarray:
@@ -38,7 +44,7 @@ def main():
         zoomed_img = zoom(img_array)
         print(zoomed_img)
 
-        transposed_img = transpose(zoomed_img)
+        transposed_img = transpose(zoomed_img.squeeze())
         print(transposed_img)
         plt.imshow(transposed_img, cmap='gray')
         plt.show()
