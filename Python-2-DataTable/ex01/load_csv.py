@@ -22,4 +22,4 @@ def load(path: str) -> pd.DataFrame | None:
         return None
     except Exception as e:
         print(f"Error: {e}")
-        return Non
+        return None
