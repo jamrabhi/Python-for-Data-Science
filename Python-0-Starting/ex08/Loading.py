@@ -7,7 +7,7 @@ def ft_tqdm(lst: range) -> None:
     if total == 0:
         return
     try:
-        len_term = max(60, os.get_terminal_size().columns - 40)
+        len_term = max(60, os.get_terminal_size().columns - (34 + 2 * len(str(total))))
     except OSError:
         len_term = 60
     for i, element in enumerate(lst, 1):
