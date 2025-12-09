@@ -9,7 +9,7 @@ def main():
         return
 
     if "country" not in df.columns:
-        print("Error : File doesn't contain 'country' column.")
+        print("Error: CSV file doesn't contain 'country' column.")
         return
 
     french = df[df["country"] == "France"]
