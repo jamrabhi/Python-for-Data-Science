@@ -1,5 +1,6 @@
 import os
 
+
 def ft_tqdm(lst: range) -> None:
     '''The function must copy the function tqdm with the yield operator.'''
     total = len(lst)
