@@ -8,8 +8,8 @@ def NULL_not_found(object: any) -> int:
     elif (isinstance(object, (int)) and object == 0):
         print(f"Zero: {object} {type(object)}")
     elif (isinstance(object, str) and object == ''):
-        print(f"Empty: {object} {type(object)}")
+        print(f"Empty: {type(object)}")
     else:
-        print("Type not found")
+        print("Type not Found")
         return 1
     return 0
