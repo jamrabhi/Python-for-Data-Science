@@ -5,7 +5,7 @@ def ft_tqdm(lst: range) -> None:
         return
     for i, element in enumerate(lst, 1):
         progress = i / total
-        bar = "█" * int(progress * 100) + " " * (100 - int(progress * 100))
-        print(f"{progress * 100:3.0f}%|{bar}| {i}/{total}", end="\r")
+        bar = "█" * int(progress * 60) + " " * (60 - int(progress * 60))
+        print(f"\r{progress * 100:3.0f}%|{bar}| {i}/{total}", end="")
         yield element
     print()
