@@ -1,3 +1,4 @@
+'''Load income and life expectancy data for 1900 and plot them.'''
 from load_csv import load
 import matplotlib.pyplot as plt
 import pandas as pd
