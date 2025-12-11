@@ -6,13 +6,16 @@ import matplotlib.pyplot as plt
 def convert_str_to_float(value: str) -> float:
     '''Convert population strings with K, M, B suffixes to float.'''
     if not isinstance(value, str):
-        return float(0.0)
+        try:
+            return float(value)
+        except ValueError:
+            return float(0.0)
 
-    suffix = value[-1]
+    suffix = value[-1].upper()
     number = value[:-1]
 
     try:
-        if suffix == 'k':
+        if suffix == 'K':
             return float(number) * 1_000
         elif suffix == 'M':
             return float(number) * 1_000_000
