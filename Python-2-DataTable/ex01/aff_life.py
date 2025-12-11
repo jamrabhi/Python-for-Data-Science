@@ -24,6 +24,7 @@ def main():
     plt.xlabel("Year")
     plt.ylabel("Life expectancy")
     plt.title("France Life expectancy Projections")
+    plt.xticks(years[::40])
     plt.show()
 
 
