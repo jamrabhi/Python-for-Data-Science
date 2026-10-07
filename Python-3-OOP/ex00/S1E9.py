@@ -17,5 +17,5 @@ class Character(ABC):
 class Stark(Character):
     """Represent a Stark character"""
     def __init__(self, first_name, is_alive=True):
-        """Initialize a stark character"""
+        """Initialize a Stark character"""
         super().__init__(first_name, is_alive)
