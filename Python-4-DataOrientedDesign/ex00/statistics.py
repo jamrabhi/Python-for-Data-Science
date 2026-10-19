@@ -20,5 +20,8 @@ def ft_statistics(*args: Any, **kwargs: Any) -> None:
             else:
                 median = num_sorted[(len(num_sorted)) // 2]
             print(median)
+        elif op == "quartile":
+            quartile = [num_sorted[len(num_sorted) // 4], num_sorted[len(num_sorted) * 3 // 4]]
+            print(quartile)
 
     
